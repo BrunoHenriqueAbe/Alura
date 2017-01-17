@@ -1,0 +1,67 @@
+<canvas width="600" height="400"></canvas>
+<html>
+	<script>
+		var tela = document.querySelector("canvas");
+		var pincel = tela.getContext("2d");
+		var xBola = 0;
+		var raio = 50;
+		var baseTriangulo1 = 150;
+		var baseTriangulo2 = 250;
+		var yBola = 200;
+
+		function desenhaTriangulo() {
+			pincel.fillStyle = "darkred";
+			pincel.beginPath();
+			pincel.moveTo(300, 0);
+			pincel.lineTo(100, baseTriangulo1);
+			pincel.lineTo(500, baseTriangulo1);
+			pincel.fill();
+
+			pincel.fillStyle = "darkred";
+			pincel.beginPath();
+			pincel.moveTo(300, 400);
+			pincel.lineTo(100, baseTriangulo2);
+			pincel.lineTo(500, baseTriangulo2);
+			pincel.fill();
+
+			baseTriangulo1 += 0.05;
+			baseTriangulo2 -= 0.05;
+
+			if (baseTriangulo1 >= 200) {
+				baseTriangulo1 = 199.9999999;
+				baseTriangulo2 = 199.9999999;
+				raio = 50;
+			}
+		}
+
+		function fundoCanvas() {
+			pincel.fillStyle = "black";
+			pincel.fillRect(0, 0, 600, 400);
+		}
+
+		function desenhaCirculo() {
+			pincel.fillStyle = "blue";
+			pincel.beginPath();
+			pincel.arc(xBola, yBola, raio, 0, 2 * Math.PI);
+			pincel.fill();
+		}
+
+		function moveCirculo() {
+			limpaTela();
+			fundoCanvas();
+			desenhaTriangulo();
+			desenhaCirculo();
+			xBola++;
+			raio -= 0.05;
+		}
+		
+		function limpaTela() {
+			pincel.clearRect(0, 0, 600, 400);
+		}
+
+		setInterval(moveCirculo, 10);
+
+	</script>
+</html>
+
+
