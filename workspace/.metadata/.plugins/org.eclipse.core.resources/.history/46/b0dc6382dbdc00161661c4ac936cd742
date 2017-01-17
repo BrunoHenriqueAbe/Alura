@@ -1,0 +1,11 @@
+package br.com.empresa.banco.conta;
+
+public class ContaPoupanca extends Conta {
+	public void atualiza(double taxa) {
+		super.saldo += super.saldo * taxa * 3;
+	}
+	
+	public void deposita(double valor) {
+		super.saldo += valor - 0.10;
+	}
+}

@@ -1,0 +1,33 @@
+package br.com.empresa.banco.conta;
+
+public class TestaComparacaoConta {
+ public static void main(String[] args) throws ValorInvalidoException {
+	ContaCorrente cc = new ContaCorrente();
+	cc.setNome("Bruno");
+	cc.deposita(1000);
+	
+	ContaCorrente cc2 = new ContaCorrente();
+	cc2.setNome("Jotaro");
+	cc2.deposita(1000);
+	
+	if(cc == cc2) {
+		System.out.println("São iguais");
+	} else {
+		System.out.println("São diferentes");
+	}
+	
+	if(cc.equals(cc2)) {
+		System.out.println("São iguais");
+	} else {
+		System.out.println("São diferentes");
+	}
+	
+	System.out.println("Saldo " + cc.getNome() + " é: R$" + cc.getSaldo());
+	System.out.println(("Saldo " + cc2.getNome() + " é: R$" + cc2.getSaldo()));
+	
+	String frase = "Socorram-me, subi no ônibus em Marrocos";
+	for(int i = frase.length() - 1; i >= 0; i--) {
+		System.out.println(frase.split(" "));
+	}
+ }
+}

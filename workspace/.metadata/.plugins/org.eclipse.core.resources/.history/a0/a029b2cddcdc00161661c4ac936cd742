@@ -1,0 +1,22 @@
+package br.com.empresa.banco.conta;
+
+public class ContaPoupanca extends Conta implements Comparable<ContaPoupanca> {
+	public void atualiza(double taxa) {
+		super.saldo += super.saldo * taxa * 3;
+	}
+	
+	public void deposita(double valor) {
+		super.saldo += valor - 0.10;
+	}
+
+	@Override
+	public int compareTo(ContaPoupanca outra) {
+		if(super.saldo < outra.saldo) {
+			return this.getNumero() = - 1;
+		}
+		if(super.saldo > outra.saldo) {
+			return this.getNumero() = + 1;
+		}
+		return 0;
+	}
+}

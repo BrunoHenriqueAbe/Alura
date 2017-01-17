@@ -1,0 +1,14 @@
+import java.util.TreeSet;
+
+public class Testa1Ate1000 {
+ public static void main(String[] args) {
+	 TreeSet<Integer> conjunto = new TreeSet<>();
+	for(int i = 1; i < 1001; i++) {
+		conjunto.add(i);
+	}
+	
+	for(Integer i : conjunto.descendingSet()) {
+		System.out.println(i + " ");
+	}
+}
+}

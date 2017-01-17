@@ -1,0 +1,20 @@
+package br.com.empresa.banco;
+import br.com.empresa.banco.conta.Conta;
+import br.com.empresa.banco.conta.ContaCorrente;
+import br.com.empresa.banco.conta.ContaPoupanca;
+import br.com.empresa.banco.conta.ValorInvalidoException;
+
+public class TestaConta {
+	public static void main(String[]args) throws ValorInvalidoException {
+		Conta contaCorrente = new ContaCorrente();
+		Conta contaPoupanca = new ContaPoupanca();
+		
+		contaCorrente.deposita(1000);
+		contaPoupanca.deposita(1000);
+		
+		contaCorrente.atualiza(0.01);
+		contaPoupanca.atualiza(0.01);
+		System.out.println(contaCorrente);
+		System.out.println(contaPoupanca);
+	}
+}

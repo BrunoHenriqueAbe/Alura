@@ -1,0 +1,18 @@
+package br.com.empresa.banco.conta;
+
+import java.util.Map;
+
+public class TestaMapa {
+	public static void main(String[] args) {
+		Conta c1 = new Conta();
+		c1.deposita(10000);
+		
+		Conta c2 = new Conta();
+		c2.deposita(300);
+		
+		Map<K, V> mapaDeContas = new HashMap();
+		
+		mapaDeContas.put("Diretor", c1);
+		mapaDeContas.put("Gerente", c2);
+	}
+}
